@@ -1,12 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h3>   Welcome to {{ title }}! </h3>
-  <nav>
-    <a routerLink="/home">Home</a>
-    <a routerLink="/games">Games</a>
-    <a routerLink="/teams">Teams</a>
-    <a routerLink="/players">Players</a>
-
-  </nav>
-  <router-outlet></router-outlet>
+  <app-header></app-header>
+  <div style="background-color: aquamarine">
+    <router-outlet></router-outlet>
+  </div>
 </div>
