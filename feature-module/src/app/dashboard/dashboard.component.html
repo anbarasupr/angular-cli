@@ -1,6 +1,20 @@
 <p>
   dashboard works!
 </p>
+<nav>
+  <a routerLinkActive="active" routerLink="/home">Home</a>
+  <a routerLinkActive="active" [routerLink]="[{ outlets: { abt: ['about'] }}]">About</a>
+  <a routerLinkActive="active" routerLink="/dash/scores">Scores</a>
+  <a routerLinkActive="active" routerLink="/dash/champions/champ">Champions</a>
+  <a routerLinkActive="active" routerLink="/dash/page-not-found">Not Found</a>
+</nav>
 <div style="background-color: cadetblue">
-  <router-outlet></router-outlet>
+  <h4>Child:Primary Outlet</h4>
+  <router-outlet #routerOutlet="outlet"></router-outlet>
 </div>
+
+<div style="background-color: cornflowerblue">
+  <h4>Child:Secondary Outlet</h4>
+  <router-outlet name="abt"></router-outlet>
+</div>
+<!-- <app-scores></app-scores> -->

@@ -14,6 +14,10 @@ import { TeamsModule } from './teams/teams.module';
 import { PlayersModule } from './players/players.module';
 import { PlayersRoutingModule } from './players/players-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ChampionsComponent } from './champions/champions.component';
+import { AboutComponent } from './about/about.component';
+import { AboutModule } from './about/about.module';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     PageNotFoundComponent,
     HeaderComponent,
     HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +37,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     TeamsModule,
     PlayersModule,
     PlayersRoutingModule,
+    AboutModule,
     AppRoutingModule,
 
 
