@@ -1,0 +1,3 @@
+ng new feature-module
+ng generate module app-routing --flat --module=app
+ng g m players/players --module=app --spec f
