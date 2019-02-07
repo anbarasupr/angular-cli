@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-12">
+    <h1>My Quotes</h1>
+    <div class="interesting">
+      <app-quote class="favorite"></app-quote>
+      <app-author></app-author>
+    </div>
+    <div class="interesting">
+      <p>click below component to toggle your favorite quote</p>
+      <app-quote (click)="isFavorite=!isFavorite" [ngClass]="{'favorite super-favorite':isFavorite}" [ngStyle]="{'width':isFavorite?'300px':'500px'}">
+      </app-quote>
+      <app-author></app-author>
+    </div>
+    <button class="btn btn-primary" (click)="showBoring(boringBlock)">Show Boring</button>
+    <div style="display:none" class="boring" #boringBlock>
+      <div id="very-boring">
+        <app-quote></app-quote>
+        <app-author></app-author>
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,12 +5,12 @@ import { AppComponent } from './app.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthorComponent } from './author/author.component';
 import { QuoteComponent } from './quote/quote.component';
+import { QuotesComponent } from './quotes/quotes.component';
 
 
 const routes: Routes = [  
-  { path: 'author', component: AuthorComponent },
-  { path: 'quote', component: QuoteComponent },
-  { path: '', redirectTo: '/quote', pathMatch: 'full' }
+  { path: 'quotes', component: QuotesComponent },
+  { path: '', redirectTo: '/quotes', pathMatch: 'full' }
 ];
 
 
@@ -18,7 +18,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     AuthorComponent,
-    QuoteComponent
+    QuoteComponent,
+    QuotesComponent
   ],
   imports: [
     BrowserModule,

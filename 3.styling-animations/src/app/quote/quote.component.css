@@ -1,0 +1,35 @@
+h1{
+    color:red;
+}
+
+/* #quote{
+    border:1px solid black;
+    padding:20px;
+} */
+
+/* host - target the element which host the component*/
+:host{
+    display: block;
+    border:1px solid black;
+    padding:20px;
+} 
+
+/* host function - applies below style only when there is a favorite class applied to the hosting component*/
+:host(.favorite){
+    border:1px solid blue;
+}
+
+:host(.super-favorite){
+    border:1px solid greenyellow;
+    color:green;
+}
+
+/* host-context - applies below style for the immediate or any of the parent of the hosting component have the boring class*/
+:host-context(.boring #very-boring){
+    border: 1px solid #ccc;
+    color: #ccc;
+}
+
+:host-context(.boring #very-boring) >>> h1{
+    color: goldenrod;
+}

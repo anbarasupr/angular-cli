@@ -1,0 +1,7 @@
+h1{
+    color:green;
+}
+
+:host-context(.boring #very-boring) >>> h1{
+    color: gold;
+}
