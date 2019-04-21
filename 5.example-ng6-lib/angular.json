@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-routing-best-practices": {
+    "example-ng6-lib-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-routing-best-practices",
+            "outputPath": "dist/example-ng6-lib-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,8 +25,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -44,32 +43,25 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "buildOptimizer": true
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-routing-best-practices:build"
+            "browserTarget": "example-ng6-lib-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-routing-best-practices:build:production"
+              "browserTarget": "example-ng6-lib-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-routing-best-practices:build"
+            "browserTarget": "example-ng6-lib-app:build"
           }
         },
         "test": {
@@ -80,7 +72,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "styles.css"
             ],
             "scripts": [],
             "assets": [
@@ -103,21 +95,15 @@
         }
       }
     },
-    "angular-routing-best-practices-e2e": {
+    "example-ng6-lib-app-e2e": {
       "root": "e2e/",
       "projectType": "application",
-      "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-routing-best-practices:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "angular-routing-best-practices:serve:production"
-            }
+            "devServerTarget": "example-ng6-lib-app:serve"
           }
         },
         "lint": {
@@ -131,38 +117,38 @@
         }
       }
     },
-    "feature-three": {
-      "root": "projects/feature-three",
-      "sourceRoot": "projects/feature-three/src",
+    "example-ng6-lib": {
+      "root": "projects/example-ng6-lib",
+      "sourceRoot": "projects/example-ng6-lib/src",
       "projectType": "library",
       "prefix": "enl",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/feature-three/tsconfig.lib.json",
-            "project": "projects/feature-three/ng-package.json"
+            "tsConfig": "projects/example-ng6-lib/tsconfig.lib.json",
+            "project": "projects/example-ng6-lib/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/feature-three/ng-package.prod.json"
+              "project": "projects/example-ng6-lib/ng-package.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/feature-three/src/test.ts",
-            "tsConfig": "projects/feature-three/tsconfig.spec.json",
-            "karmaConfig": "projects/feature-three/karma.conf.js"
+            "main": "projects/example-ng6-lib/src/test.ts",
+            "tsConfig": "projects/example-ng6-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/example-ng6-lib/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/feature-three/tsconfig.lib.json",
-              "projects/feature-three/tsconfig.spec.json"
+              "projects/example-ng6-lib/tsconfig.lib.json",
+              "projects/example-ng6-lib/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -172,5 +158,5 @@
       }
     }
   },
-  "defaultProject": "angular-routing-best-practices"
+  "defaultProject": "example-ng6-lib-app"
 }

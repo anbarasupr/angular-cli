@@ -5,25 +5,20 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "es2015",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "importHelpers": true,
     "target": "es5",
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
-      "es2018",
+      "es2017",
       "dom"
     ],
     "paths": {
-      "feature-three": [
-        "dist/feature-three"
-      ],
-      "feature-three/*": [
-        "dist/feature-three/*"
+      "example-ng6-lib": [
+        "dist/example-ng6-lib"
       ]
     }
   }

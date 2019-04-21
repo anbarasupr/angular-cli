@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routes';
+//import { FeatureThreeModule } from 'feature-three';
 
 @NgModule({
   declarations: [AppComponent],
