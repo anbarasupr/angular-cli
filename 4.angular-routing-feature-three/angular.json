@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-routing-best-practices": {
+    "angular-routing-feature": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-routing-best-practices",
+            "outputPath": "dist/angular-routing-feature",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-routing-best-practices:build"
+            "browserTarget": "angular-routing-feature:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-routing-best-practices:build:production"
+              "browserTarget": "angular-routing-feature:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-routing-best-practices:build"
+            "browserTarget": "angular-routing-feature:build"
           }
         },
         "test": {
@@ -103,7 +103,7 @@
         }
       }
     },
-    "angular-routing-best-practices-e2e": {
+    "angular-routing-feature-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-routing-best-practices:serve"
+            "devServerTarget": "angular-routing-feature:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-routing-best-practices:serve:production"
+              "devServerTarget": "angular-routing-feature:serve:production"
             }
           }
         },
@@ -132,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "angular-routing-best-practices"
+  "defaultProject": "angular-routing-feature"
 }

@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { AppSpecificCanActivateGuard } from './_guards';
 
 export const AppRoutes: Routes = [
   {
@@ -13,7 +12,6 @@ export const AppRoutes: Routes = [
   },
   {
     path: 'feature-two',
-    loadChildren: './feature-two/feature-two.module#FeatureTwoModule',
-    canActivate: [AppSpecificCanActivateGuard]
+    loadChildren: './feature-two/feature-two.module#FeatureTwoModule'
   }
 ];
