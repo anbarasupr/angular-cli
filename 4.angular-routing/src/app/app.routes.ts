@@ -18,6 +18,6 @@ export const AppRoutes: Routes = [
   {
     path: 'feature-three',
     //component: FeatureThreeComponent
-    loadChildren: 'feature-three/feature-three.module#FeatureThreeModule'
+    loadChildren: 'feature-three#FeatureThreeModule'
   }
 ];

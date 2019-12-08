@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-	"build_lib": "ng build --prod feature-three",
+    "build_lib": "ng build --prod feature-three",
     "npm_pack": "cd dist/feature-three && npm pack",
     "package": "npm run build_lib && npm run npm_pack"
   },
