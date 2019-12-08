@@ -10,14 +10,25 @@ import { FileuploadService } from 'src/app/service/fileupload.service';
 export class FileuploadComponent implements OnInit {
   form: FormGroup;
   loading: boolean = false;
-  selectedFile:File;
+  selectedFile: File;
+  successMessage: string;
+  failureMessage: string;
+  accounts: any = [];
   @ViewChild('fileInput') fileInput: ElementRef;
 
-  constructor(private fb: FormBuilder,private fileService:FileuploadService) {
+  constructor(private fb: FormBuilder, private fileService: FileuploadService) {
     this.createForm();
   }
 
   ngOnInit(): void {
+    this.loading = true;
+    this.fileService.findAll().subscribe(response => {
+      this.loading = false;
+      this.accounts = response;
+    }, error => {
+      this.loading = false;
+      this.failureMessage = 'Error while fetching accounts';
+    });
   }
 
   createForm() {
@@ -26,11 +37,16 @@ export class FileuploadComponent implements OnInit {
     });
   }
 
+  reset() {
+    this.successMessage = this.failureMessage = null;
+  }
+
   onFileChange(event) {
-    let reader = new FileReader();
+    this.reset();
     if (event.target.files && event.target.files.length > 0) {
-      let file:File = event.target.files[0];
-      this.selectedFile=file;
+      let file: File = event.target.files[0];
+      this.selectedFile = file;
+      /* let reader = new FileReader();
       reader.readAsDataURL(file);
       let result:any=reader.result;
       console.log(reader,event,result,result.split(',')[1]);
@@ -41,22 +57,22 @@ export class FileuploadComponent implements OnInit {
           filetype: file.type,
           value: result.split(',')[1]
         })
-      };
+      }; */
     }
   }
 
   onSubmit() {
     this.loading = true;
-
-    this.fileService.uploadFile(this.selectedFile).subscribe((response:any)=>{
-      alert('success');
-      this.loading=false;
+    this.fileService.uploadFile(this.selectedFile).subscribe((response: any) => {
+      this.successMessage = 'File uploaded successfully';
+      this.loading = false;
+      this.accounts = response;
     },
-    error=>{
-      alert('error');
-      this.loading=false;
-    });
-    
+      error => {
+        this.failureMessage = 'File upload failed. Please try again.';
+        this.loading = false;
+      });
+
     /* const formModel = this.form.value;    
     setTimeout(() => {
       console.log(formModel);

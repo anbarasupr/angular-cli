@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FileuploadService {
-  host: string = 'http://localhost:9090/';
+  host: string = 'http://localhost:8080/';
   constructor(private http: HttpClient) { }
 
   uploadFile(file: File): Observable<Object> {
@@ -16,10 +16,14 @@ export class FileuploadService {
     return this.http.post(url, formdata);
   }
 
+  findAll(): Observable<Object> {
+    return this.http.get(this.host + 'files/findAll');
+  }
+
   pushFileToStorage(file: File): Observable<HttpEvent<{}>> {
     const formdata: FormData = new FormData();
     formdata.append('file', file);
-    const req = new HttpRequest('POST', 'http://localhost:8085/profile/uploadpicture', formdata, {
+    const req = new HttpRequest('POST', 'http://localhost:8080/files/upload/shared', formdata, {
       reportProgress: true,
       responseType: 'text'
     }
