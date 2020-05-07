@@ -1,0 +1,11 @@
+
+
+.inactive{
+    border: 3px solid #ccc;
+}
+
+
+/* See below marked class is commented and it is achieved using :host in project component css instead of achieveing here */
+.marked{
+    border: 3px solid blue;
+} 

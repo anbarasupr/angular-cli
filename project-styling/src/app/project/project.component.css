@@ -1,0 +1,27 @@
+:host{
+    display:block;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: 3px px 2px #ccc;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.form-control{
+    display: inline-block;
+    width:50%;
+}
+
+:host(.marked){
+/* border: 3px solid blue; */
+padding: 18px; /*reason for aving 18px- here the host initially is having 20px padding and 1px border. 
+But after the host marked, we are given here 3 px border. if it is like that, then we see some climsy 
+while host is getting marked because 1px border is changing into 3px border.
+So in order to compensate that extra 2px border, we are reducing the 2px padding i.e from 20px padding to 18px and now it look smooth. 
+*/
+}
+
+
+:host(.inactive){
+color:#ccc;
+}
